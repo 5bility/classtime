@@ -22,4 +22,5 @@
 
 - Flask
     - 점프 투 플라스크: https://wikidocs.net/book/4542
+    - vscode flask 개발환경 구축 : https://krksap.tistory.com/1766
 </div>
