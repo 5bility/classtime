@@ -31,7 +31,7 @@
 <h3>[공지사항]</h3>
 
 - 파일 관련
-    - .vscode는vscode에서 flask 실행환경을 설정하기 위한 json 파일이 들어있는 디렉터리입니다.
+    - .vscode는 vscode에서 flask 실행환경을 설정하기 위한 json 파일이 들어있는 디렉터리입니다.
     - migrations는 flask와 db간의 연동을 관리하기위한 db revision 파일입니다.
     - 파일명들은 flask 구동과 연동되는 이름들 입니다. 바꾸지 말아주세요.
 - DB 관련
