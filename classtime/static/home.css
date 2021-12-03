@@ -44,22 +44,56 @@ section {
     height: auto;
 }
 
+/* body */
 #background {
     background-image: url('../static/image/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-width: 1200px;
 }
 
 #background-wrap {
     background-color: rgba(0, 0, 0, 30%);
+    min-width: 1200px;
 }
 
 #head-container {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
+    flex-direction: column;
     height: 250px;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.user-area {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.sign-up-btn {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    margin: 8px;
+    padding: 1px 10px;
+}
+
+.sign-up-btn:hover {
+    background-color: #aaa;
+}
+
+.sign-in-btn {
+    color: #fff;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.sign-in-btn:hover {
+    color: #ddd;
+    transform: translateX(5px);
+    transition-duration: 0.5s;
 }
 
 .title {
