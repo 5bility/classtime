@@ -15,10 +15,10 @@ def create_app():
     # ORM
     db.init_app(app)
     migrate.init_app(app, db)
-    from classtime import models
+    from build import models
     
     # blueprint
-    from classtime.views import main_views
+    from build.views import main_views
     app.register_blueprint(main_views.bp)
     
     return app

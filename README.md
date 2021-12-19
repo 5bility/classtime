@@ -37,5 +37,11 @@
 - DB 관련
     - db 설정은 임시로 schema: classtime, user: classtimepm, pw: ct1234로 설정하였습니다. 추후에 상의를 통해 db환경을 다시 설정하도록 하겠습니다.
 
+- 환경설정 관련
+    - flask 설치
+        - 해당 파일로 가서 pip install flask
+    - flask-Migrate 설치
+        - 해당 파일로 가서 pip install flask-Migrate
+        - AttributeError: can't set attribute 발생 시 pip install SQLAlchemy==1.3.23
 - flask 환경 설정 관련해서 어려움이 있으시면 연락주세요
 </div>
