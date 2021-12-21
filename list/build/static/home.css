@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "맑은 고딕", "고딕";
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6, th, td, p {
+    margin: 0;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.root-wrap {
+    min-height: 100%;
+    position: relative;
+    /* padding-bottom: 100px; */
+}
+
+.wrap {
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 1200px;
+}
+
+section {
+    height: auto;
+}
+
+/* body */
+#background {
+    background-image: url('../static/image/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 1200px;
+}
+
+#background-wrap {
+    background-color: rgba(0, 0, 0, 30%);
+    min-width: 1200px;
+}
+
+#head-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: space-between;
+}
+
+.user-area {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.sign-up-btn {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    margin: 8px;
+    padding: 1px 10px;
+}
+
+.sign-up-btn:hover {
+    background-color: #aaa;
+}
+
+.sign-in-btn {
+    color: #fff;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.sign-in-btn:hover {
+    color: #ddd;
+    transform: translateX(5px);
+    transition-duration: 0.5s;
+}
+
+.title {
+    color: #fff;
+    font-size: 128px;
+}
+
+#menu-container {
+    align-items: center;
+    display: flex;
+    min-height: calc(100vh - 250px);
+    justify-content: center;
+}
+
+.menu {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 600px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: flex;
+    border: 3px solid #fff;
+    height: 250px;
+    width: 250px;
+    margin: 20px;
+}
+
+.menu li:hover {
+    filter: invert(17%) sepia(4%) saturate(8%) hue-rotate(338deg) brightness(105%) contrast(95%);
+    transform: translateY(-5px);
+    transition-duration: 0.5s;
+}
+
+.menu li a {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu li a img {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(303deg) brightness(102%) contrast(103%);
+    margin: 20px 0;
+    width: 140px;
+}
+
+.class-eval-btn img {
+    padding-left: 10px;
+    width: 150px !important;
+}
+
+.grade-manage-btn img {
+    padding-bottom: 10px;
+}
