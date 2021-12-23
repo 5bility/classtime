@@ -169,10 +169,10 @@ section {
 }
 
 #add-btn {
+    background-color: transparent;
     border: 1px solid #fff;
     border-radius: 10px;
     height: 20px;
-    margin-right: 180px;
     padding: 3px 7px;
     text-align: center;
     width: 80px;
