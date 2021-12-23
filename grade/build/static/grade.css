@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "맑은 고딕", "고딕";
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, th, td, p {
+    margin: 0;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.root-wrap {
+    min-height: 100%;
+    position: relative;
+    /* padding-bottom: 100px; */
+}
+
+.wrap {
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 1200px;
+}
+
+section {
+    height: auto;
+}
+
+/* body */
+#background {
+    background-image: url('../static/image/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 1200px;
+}
+
+#background-wrap {
+    background-color: rgba(0, 0, 0, 30%);
+    min-width: 1200px;
+}
+
+#head-container {
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    color: #fff;
+    font-size: 32px;
+}
+
+.navi {
+    display: flex;
+    font-size: 16px;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+
+.navi li::after {
+    background: #fff;
+    bottom: 0%;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 0px;
+    transform-origin: right bottom;
+    transform: scale(0, 1);
+    transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+    width: 100%;
+}
+  
+.navi li:hover::after {
+    transform-origin: left bottom;
+    transform: scale(1, 1)
+}
+
+.user-area {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sign-up-btn {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 8px;
+    padding: 1px 10px;
+}
+
+.sign-up-btn:hover {
+    background-color: #aaa;
+}
+
+.sign-in-btn {
+    font-size: 16px;
+    margin: 10px;
+}
+
+.sign-in-btn:hover {
+    color: #ddd;
+    transform: translateX(5px);
+    transition-duration: 0.5s;
+}
+
+/* main */
+#select-container {
+    height: 200px;
+    padding: 20px 0;
+}
+
+#select-form {
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+#select-form * {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    margin: 0 20px;
+    padding: 3px 10px;
+    
+}
+
+#select-form select {
+    cursor: pointer;
+}
+
+#select-form select:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#submit {
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#list-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 280px);
+    justify-content: flex-start;
+}
+
+.list {
+    text-align: center;
+    width: 800px;
+    border: 1px solid #fff;
+}
+
+.list th, .list td {
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    height: 35px;
+    padding: 7px 3px;
+}
+
+.access-area {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.add-btn {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    height: 20px;
+    margin-right: 180px;
+    padding: 3px 7px;
+    text-align: center;
+    width: 80px;
+}
+
+.add-btn:hover {
+    background-color: rgba(255, 255, 255, 20%);
+}

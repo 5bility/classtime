@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassTime</title>
+    <meta name="description" content="대학 커뮤니티"/>
+    <meta name="keywords" content="대학, 강의, 학점, 시간표, 수업"/>
+    <meta name="author" content="5bility"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!--Open Graph-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="대학 커뮤니티 사이트"/>
+    <meta property="og:description" content="대학 강의 평가 및 커뮤니티 활동할 수 있는 사이트입니다."/>
+    <meta property="og:site_name" content="ClassTime" />
+    <!-- <meta property="og:image" content="resources/-"> -->
+    <!-- <meta property="og:url" content="https://www.kpu.ac.kr"> -->
+
+    <!--fabicon-->
+    <link rel="icon" href="../static/png/clock.png"/>
+    <link rel="apple-touch-icon" href="../static/png/clock.png"/>
+    <link rel="short icon" type="image/x-icon" href="../static/png/clock.png"/>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='list.css') }}"/>
+
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/5ac43742ba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="root-wrap">
+        <div id="background">
+            <div id="background-wrap">
+                <header>
+                    <div class="wrap">
+                        <div id="head-container">
+                            <h1 class="logo">
+                                <a href="http://localhost:5001">ClassTime</a>
+                            </h1>
+                            <ul class="navi">
+                                <li>
+                                    <a href="http://localhost:5003/list">List</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost:5004/eval">Evaluation</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost:5005/community">Community</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost:5006/grade">Grade</a>
+                                </li>
+                                </li>
+                            </ul>
+                            <div class="user-area">
+                                {% if g.user %}
+                                <a href="#" class="profile"><i class="far fa-user-circle"></i></a>
+                                <a href="http://localhost:5002/signout" class="sign-out-btn">로그아웃</a>
+                                {% else %}
+                                <a href="http://localhost:5002/signup" class="sign-up-btn">sign up</a>
+                                <a href="http://localhost:5002/signin" class="sign-in-btn">sign in <i class="fas fa-arrow-right"></i></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section>
+                    <div class="wrap">
+                        <div id="select-container">
+                            <form action="#" id="select-form">
+                                <select name="depart" id="depart">
+                                    <option value="computer">컴퓨터공학부</option>
+                                    <option value="design">디자인공학부</option>
+                                    <option value="manage">경영학부</option>
+                                </select>
+                                <select name="grade" id="grade">
+                                    <option value="1">1학년</option>
+                                    <option value="2">2학년</option>
+                                    <option value="3">3학년</option>
+                                    <option value="4">4학년</option>
+                                </select>
+                                <input type="text" id="search" placeholder="수업명">
+                                <input type="submit" id="submit" value="검색">
+                            </form>
+                        </div>
+                        <div id="list-container">
+                            <table class="list">
+                                <colgroup>
+                                    <col style="width: 70px;">
+                                    <col>
+                                    <col style="width: 110px;">
+                                    <col style="width: 140px;">
+                                    <col style="width: 80px;">
+                                    <col style="width: 120px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 120px;">
+                                </colgroup>
+                                <thead>
+                                    <tr class="list-head">
+                                        <th>#</th>
+                                        <th>강의명</th>
+                                        <th>강의실</th>
+                                        <th>강의시간</th>
+                                        <th>학생수</th>
+                                        <th>교수명</th>
+                                        <th>추천</th>
+                                        <th>평가하기</th>
+                                    </tr>
+                                </thead>
+                                {% if class_list %}
+                                <tbody>
+                                    {% for class in class_list %}
+                                    <tr>
+                                        <td class="td-num">{{ class.id }}</td>
+                                        <td class="td-name">{{ class.name }}</td>
+                                        <td class="td-classroom">{{ class.classroom }}</td>
+                                        <td class="td-classtime">{{ class.classtime }}</td>
+                                        <td class="td-student">{{ class.student_count }}</td>
+                                        <td class="td-professor">{{ class.prof_name }}</td>
+                                        <td class="td-stars">-</td>
+                                        <td class="td-eval">
+                                            <a href="http://localhost:5004/eval">평가하기</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                                {% endif %}
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

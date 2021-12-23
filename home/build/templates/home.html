@@ -36,8 +36,13 @@
                     <div class="wrap">
                         <div id="head-container">
                             <div class="user-area">
-                                <a href="#" class="sign-up-btn">sign up</a>
-                                <a href="#" class="sign-in-btn">sign in <i class="fas fa-arrow-right"></i></a>
+                                {% if g.user %}
+                                <a href="#" class="profile"><i class="far fa-user-circle"></i></a>
+                                <a href="http://localhost:5002/signout" class="sign-out-btn">로그아웃</a>
+                                {% else %}
+                                <a href="http://localhost:5002/signup" class="sign-up-btn">sign up</a>
+                                <a href="http://localhost:5002/signin" class="sign-in-btn">sign in <i class="fas fa-arrow-right"></i></a>
+                                {% endif %}
                             </div>
                             <h1 class="title">ClassTime</h1>
                         </div>
@@ -48,25 +53,25 @@
                         <div id="menu-container">
                             <ul class="menu">
                                 <li class="class-list-btn">
-                                    <a href="#">
+                                    <a href="http://localhost:5003/list">
                                         <img src="{{ url_for('static', filename='png/list.png')}}" alt="강의목록">
                                         <p>강의목록</p>
                                     </a>
                                 </li>
                                 <li class="class-eval-btn">
-                                    <a href="#">
+                                    <a href="http://localhost:5004/eval">
                                         <img src="{{ url_for('static', filename='png/eval.png')}}" alt="강의평가">
                                         <p>강의평가</p>
                                     </a>
                                 </li>
                                 <li class="grade-manage-btn">
-                                    <a href="#">
+                                    <a href="http://localhost:5006/grade">
                                         <img src="{{ url_for('static', filename='png/graph.png')}}" alt="학점관리">
                                         <p>학점관리</p>
                                     </a>
                                 </li>
                                 <li class="community-btn">
-                                    <a href="#">
+                                    <a href="http://localhost:5005/community">
                                         <img src="{{ url_for('static', filename='png/community.png')}}" alt="커뮤니티">
                                         <p>커뮤니티</p>
                                     </a>

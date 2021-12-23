@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassTime</title>
+    <meta name="description" content="대학 커뮤니티"/>
+    <meta name="keywords" content="대학, 강의, 학점, 시간표, 수업"/>
+    <meta name="author" content="5bility"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!--Open Graph-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="대학 커뮤니티 사이트"/>
+    <meta property="og:description" content="대학 강의 평가 및 커뮤니티 활동할 수 있는 사이트입니다."/>
+    <meta property="og:site_name" content="ClassTime" />
+    <!-- <meta property="og:image" content="resources/-"> -->
+    <!-- <meta property="og:url" content="https://www.kpu.ac.kr"> -->
+
+    <!--fabicon-->
+    <link rel="icon" href="../static/png/clock.png"/>
+    <link rel="apple-touch-icon" href="../static/png/clock.png"/>
+    <link rel="short icon" type="image/x-icon" href="../static/png/clock.png"/>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='post.css') }}"/>
+
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/5ac43742ba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="root-wrap">
+        <div id="background">
+            <div id="background-wrap">
+                <header>
+                    <div class="wrap">
+                        <div id="head-container">
+                            <h1 class="logo">
+                                <a href="http://localhost:5001">ClassTime</a>
+                            </h1>
+                            <ul class="navi">
+                                <li>
+                                    <a href="http://localhost:5003/list">List</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost:5004/eval">Evaluation</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost:5005/community">Community</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost:5006/grade">Grade</a>
+                                </li>
+                            </ul>
+                            <div class="user-area">
+                                {% if g.user %}
+                                <a href="#" class="profile"><i class="far fa-user-circle"></i></a>
+                                <a href="http://localhost:5002/signout" class="sign-out-btn">로그아웃</a>
+                                {% else %}
+                                <a href="http://localhost:5002/signup" class="sign-up-btn">sign up</a>
+                                <a href="http://localhost:5002/signin" class="sign-in-btn">sign in <i class="fas fa-arrow-right"></i></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section>
+                    <div class="wrap">
+                        <div id="post-container">
+                            <form action="#" id="post-form">
+                                <div class="title-area">
+                                    <div>제목</div>
+                                    <textarea name="title" id="title" cols="30" rows="1"></textarea>
+                                </div>
+                                <div class="comment-area">
+                                    <div>내용</div>
+                                    <textarea name="comment" id="comment" cols="30" rows="30"></textarea>
+                                </div>
+                                <div class="submit-area">
+                                    <input type="button" id="cancel" value="취소">
+                                    <input type="submit" id="submit" value="완료">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -40,12 +40,15 @@
 - 환경설정 관련
     - flask 설치
         - 해당 파일로 가서 pip install flask
-    - flask-Migrate 설치
+    - Flask-Migrate 설치
         - 해당 파일로 가서 pip install flask-Migrate
         - AttributeError: can't set attribute 발생 시 pip install SQLAlchemy==1.3.23
+    - Flask-WTF 설치
+        - 해당 파일로 가서 pip install Flask-WTF
 - 주의사항
     - vscode에서 작업 시 최상위directory(classtime)가 아닌 각각의 하위 파일(home, list, ..등)을 오픈하여 작업해야합니다.
     - flask 설치 및 환경설정이 안되어 있는 경우 환경설정 관련 항목을 참고하여 설정해주세요.
     - app을 찾지 못하는 경우 발생 시, ctrl+shift+p를 눌러 위 커맨트 창에서 Select Interpreter를 통해 interpreter를 수정해주세요.
+    - export FLASK_APP=build/app.py 를 입력하여 app.py 위치 수정 필요
 - flask 환경설정 관련해서 어려움이 있으시면 연락주세요
 </div>
