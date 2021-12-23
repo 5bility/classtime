@@ -139,6 +139,7 @@ section {
     flex-direction: column;
     min-height: calc(100vh - 80px);
     justify-content: center;
+    padding-bottom: 80px;
 }
 
 .list {
@@ -172,8 +173,10 @@ section {
     background-color: transparent;
     border: 1px solid #fff;
     border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
     height: 20px;
-    padding: 3px 7px;
+    padding: 5px 8px;
     text-align: center;
     width: 80px;
 }

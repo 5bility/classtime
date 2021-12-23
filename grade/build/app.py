@@ -20,8 +20,8 @@ def create_app():
     from build import models
     
     # blueprint
-    from build.views import main_views
+    from build.views import main_views, addgrade_views
     app.register_blueprint(main_views.bp)
+    app.register_blueprint(addgrade_views.bp)
     
     return app
-
