@@ -10,6 +10,9 @@ services:
       - ./home:/app
     ports:
       - "5001:5001"
+    networks:
+      - 5bility
+
   user:
     build:
       context: ./user
@@ -19,6 +22,9 @@ services:
       - ./user:/app
     ports:
       - "5002:5002"
+    networks:
+      - 5bility
+
   list:
     build:
       context: ./list
@@ -28,6 +34,9 @@ services:
       - ./list:/app
     ports:
       - "5003:5003"
+    networks:
+      - 5bility
+
   evaluation:
     build:
       context: ./evaluation
@@ -37,6 +46,9 @@ services:
       - ./evaluation:/app
     ports:
       - "5004:5004"
+    networks:
+      - 5bility
+
   community:
     build:
       context: ./community
@@ -46,6 +58,9 @@ services:
       - ./community:/app
     ports:
       - "5005:5005"
+    networks:
+      - 5bility
+
   grade:
     build:
       context: ./grade
@@ -55,6 +70,9 @@ services:
       - ./grade:/app
     ports:
       - "5006:5006"
+    networks:
+      - 5bility
+
   mysql:
     build: ./mysql
     restart: unless-stopped
@@ -67,3 +85,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ct1234
       MYSQL_DATABASE: classtime
+    networks:
+      - 5bility
+
+networks:
+  5bility:
+    external: true
