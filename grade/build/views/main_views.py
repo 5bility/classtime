@@ -12,3 +12,7 @@ def index():
 def grade():
     grade_list = Grade.query.order_by(Grade.id)
     return render_template('grade.html', grade_list=grade_list)
+
+@bp.route('/addgrade')
+def addgrade():
+    return render_template('addgrade.html')
