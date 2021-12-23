@@ -36,7 +36,7 @@
                     <div class="wrap">
                         <div id="head-container">
                             <h1 class="logo">
-                                <a href="http://localhost:5001">ClassTime</a>
+                                <a href="http://localhost:5001/home">ClassTime</a>
                             </h1>
                             <ul class="navi">
                                 <li>
@@ -84,22 +84,26 @@
                                         <th>추천</th>
                                     </tr>
                                 </thead>
+                                {% if post_list %}
                                 <tbody>
+                                    {% for post in post_list %}
                                     <tr>
-                                        <td class="td-num">1</td>
+                                        <td class="td-num">{{ post.id }}</td>
                                         <td class="td-title">
                                             <a href="#">
-                                                제목입니다.
+                                                {{ post.title }}
                                             </a>
-                                            <span class="td-replys">[1]</span>
+                                            <span class="td-replys">[{{ post.replys }}]</span>
                                         </td>
-                                        <td class="td-name"><a href="#">서원호</a></td>
-                                        <td class="td-date">2019-02-11</td>
-                                        <td class="td-like">1</td>
+                                        <td class="td-name"><a href="#">{{ post.name }}</a></td>
+                                        <td class="td-date">{{ post.posttime }}</td>
+                                        <td class="td-like">{{ post.recommends }}</td>
                                     </tr>
+                                    {% endfor %}
                                 </tbody>
+                                {% endif %}
                             </table>
-                            <a href="/post" class="post-btn">
+                            <a href="{{ url_for('main.post') }}" class="post-btn">
                                 글쓰기
                             </a>
                         </div>

@@ -3,11 +3,6 @@ drop database if exists classtime;
 create database classtime;
 use classtime;
 
-create user 'classtimepm'@'%' identified by 'ct1234';
-grant all privileges on classtime.* to 'classtimepm'@'%';
-
-flush privileges;
-
 create table user(
 	id varchar(20) not null primary key,
     pw varchar(20) not null,
@@ -85,3 +80,26 @@ create table reply(
     foreign key (user_id) references user(id),
     foreign key (post_id) references post(id)
 );
+
+insert into professor(name, depart) values('이재학', '컴퓨터공학부');
+insert into professor(name, depart) values('전광일', '컴퓨터공학부');
+insert into professor(name, depart) values('허훈식', '컴퓨터공학부');
+insert into professor(name, depart) values('공기석', '컴퓨터공학부');
+insert into professor(name, depart) values('김영곤', '컴퓨터공학부');
+insert into professor(name, depart) values('박정민', '컴퓨터공학부');
+insert into professor(name, depart) values('신성욱', '컴퓨터공학부');
+insert into professor(name, depart) values('정성택', '컴퓨터공학부');
+insert into professor(name, depart) values('최종필', '컴퓨터공학부');
+insert into professor(name, depart) values('방영철', '컴퓨터공학부');
+insert into professor(name, depart) values('서대영', '컴퓨터공학부');
+insert into professor(name, depart) values('최진구', '컴퓨터공학부');
+insert into professor(name, depart) values('정의훈', '컴퓨터공학부');
+insert into professor(name, depart) values('배유석', '컴퓨터공학부');
+insert into professor(name, depart) values('이보경', '컴퓨터공학부');
+insert into professor(name, depart) values('한경숙', '컴퓨터공학부');
+
+insert into lecture(name, classroom, classtime, student_count, professor_id) values('컴퓨터응용설계', 'E516', '목9-12', 50, 0);
+insert into lecture(name, classroom, classtime, student_count, professor_id) values('유닉스시스템프로그래밍', 'E423', '화6-8목6-8', 40, 1);
+insert into lecture(name, classroom, classtime, student_count, professor_id) values('웹서비스프로그래밍', 'E523', '화1-2목1-2', 40, 2);
+insert into lecture(name, classroom, classtime, student_count, professor_id) values('프로그래밍', 'E423', '월2-3수6', 50, 5);
+insert into lecture(name, classroom, classtime, student_count, professor_id) values('선형대수학', 'E516', '목9-12', 50, 13);

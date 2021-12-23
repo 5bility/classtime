@@ -1,5 +1,5 @@
 import re
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, session
 from werkzeug.utils import redirect
 bp = Blueprint('main', __name__, url_prefix='/')
 
@@ -7,8 +7,12 @@ bp = Blueprint('main', __name__, url_prefix='/')
 def hello_pybo():
     return 'Hello, Pybo'
 
-@bp.route('/')
-def index():
+@bp.route('/home')
+def home():
+    # logined = request.args.get('login')
+    
+    # if logined != 'false':
+    #     session['user_id'] = logined
     return render_template('home.html')
 
 @bp.route('/signin')

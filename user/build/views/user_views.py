@@ -29,7 +29,11 @@ def signup():
     user = User(id=id, pw=pw, name=name, nickname=nickname, depart=depart, year=year, sex=sex)
     db.session.add(user)
     db.session.commit()
-    return redirect(url_for('main.signin'))
+    
+    logined = session.get('user_id')
+    if logined is None:
+        logined = 'false'
+    return redirect('http://localhost:5001/home?login=' + str(logined))
 
 @bp.route('/signin', methods=('POST',))
 def signin():
@@ -46,11 +50,11 @@ def signin():
     if error is None:
         session.clear()
         session['user_id'] = user.id
-        return redirect(url_for('main.signup'))
+        return redirect('http://localhost:5001/home?login=' + str(session.get('user_id')))
     flash(error)
-    return redirect(url_for('main.signin'))
+    return redirect('http://localhost:5001/home?login=false')
 
 @bp.route('/signout')
 def signout():
     session.clear()
-    return redirect(url_for('main.signin'))
+    return redirect('http://localhost:5001/home?login=false')
